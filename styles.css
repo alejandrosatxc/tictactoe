@@ -53,6 +53,9 @@ ul  {
 }
 
 ul li {
+    color: white;
+    text-align: center;
+    font-size: 105px;
     background-color: darkgreen;
     border: 4px solid gray;
     border-radius: 5px;
