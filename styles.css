@@ -62,7 +62,7 @@ ul li {
 
 #start-btn,
 #reset-btn {
-    border: 2px solid black;
+    border: 2px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
