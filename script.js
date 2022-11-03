@@ -12,6 +12,8 @@ function startGame() {
         $(this).off("click")
         //Remove all X's and O's
         $(this).text('')
+        //Remove cursor styling
+        $(this).css("cursor", "none")
     })
 
     //Decide which player goes first randomly, like a coin flip, with a small countdown
@@ -32,8 +34,9 @@ function startGame() {
     }, 100)
 
 
-    //Add click event handlers to all blocks, the function that runs carries out game logic
+    //For each <li> in boardEl...
     boardEl.children('ul').children().each(function () {
+        //Add a click event handler that will run game logic
         $(this).on("click", function () {
             //If player is 1, print X, else print O
             player ? $(this).text('X') : $(this).text('O')
@@ -42,7 +45,11 @@ function startGame() {
             $('#status').text(`Player ${player + 1}'s turn!`)
             //Remove event listner so this square cannot be clicked again
             $(this).off("click")
+            //Change cursor for this square to 'not-allowed'
+            $(this).css("cursor", "not-allowed")
         })
+        //Change the cursor CSS for each square to 'pointer'
+        $(this).css("cursor", "pointer")
     })
 
 }
